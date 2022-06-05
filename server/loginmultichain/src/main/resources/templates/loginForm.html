@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+
+
+<div class="container center-contents">
+    <div class="row">
+        <form class="form-signin" method="post" th:action="@{/login}">
+            <h1 class="h3 mb-3 font-weight-normal"> 로그인 </h1>
+            <label class="sr-only" for="username"> 로그인 아이디 </label>
+            <input autofocus
+                   class="form-control"
+                   id="username"
+                   name="username"
+                   placeholder="아이디를 입력해 주세요"
+                   required type="text">
+            <label class="sr-only" for="password"> 비밀번호 </label>
+            <input class="form-control"
+                   id="password"
+                   name="password"
+                   placeholder="비밀번호를 입력해 주세요"
+                   required
+                   type="password">
+            <div class="checkbox mb-3">
+                <label>
+                    <input name="remember-me" type="checkbox"> Remember me
+                </label>
+            </div>
+            <div class="type-select">
+                <input name="type" type="radio" value="student"> 학생
+                <input checked name="type" type="radio" value="teacher"> 선생님
+            </div>
+            <button class="btn btn-lg btn-primary btn-block"  type="submit"> 로그인 </button>
+            <div class="error-message" th:if="${loginError}">
+                <span> 아이디나 패스워드가 올바르지 않습니다. </span>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script th:src="@{/js/bootstrap.js}" />
+</body>
+</html>

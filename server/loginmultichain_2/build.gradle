@@ -1,9 +1,9 @@
 
-
 apply from: "../web-common.gradle"
 
-dependencies{
+dependencies {
 
     compile project(":web-student-teacher")
 
 }
+
